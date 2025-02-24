@@ -2,7 +2,7 @@
 require_once 'Parsedown.php';
 
 $parsedown = new Parsedown();
-$readmeContent = file_get_contents('README.md');
+$readmeContent = file_get_contents('about.md');
 
 $imageDirectory = 'food';
 $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
