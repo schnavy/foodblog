@@ -4,12 +4,10 @@
     box-sizing: border-box;
 }
 
-.text{
+div{
     margin: 5px
 }
 
 img{
     width: 300px;
-    display: block;
-    margin: 5px;
 }
