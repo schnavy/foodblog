@@ -9,20 +9,27 @@ $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Foodblog</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="text">
-        <?php echo $parsedown->text($readmeContent); ?>
-        <br/>
-    </div>
-    <div>
-        <?php foreach ($images as $img): ?>
-            <img src="<?php echo $img; ?>" alt="Food Image">
-        <?php endforeach; ?>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Foodblog</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="text">
+            <?php echo $parsedown->text($readmeContent); ?>
+            <br/>
+        </div>
+        <div class="images">
+            <?php foreach ($images as $index => $img): ?>
+                <div class="image-item">
+                    <p class="index"><?php echo $index + 1; ?></p>
+                    <img src="<?php echo $img; ?>" alt="Food Image <?php echo $index + 1; ?>">
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <div class="text">
+            S🧅 far they are n🧅t in a particular 🧅rder, but numbered, in case you want me to c🧅🧅k it again.</br>
+            C🧅llected by this <a href="https://davidwahrenburg.de">🥔</a>.
+        </div>
+    </body>
 </html>

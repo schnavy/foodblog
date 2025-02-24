@@ -1,13 +1,34 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-div{
+.text {
+    padding: 5px;
+    margin: 5px;
+}
+
+.images {
     margin: 5px
 }
 
-img{
+.image-item {
+    display: inline-block;
+    position: relative;
+}
+
+.image-item .index {
+    position: absolute;
+    padding: 3px;
+    background-color: white;
+    display: none;
+}
+
+.image-item:hover .index {
+    display: block;
+}
+
+img {
     width: 300px;
 }
