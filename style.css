@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.text{
+    margin: 5px
+}
+
 img{
-    width: 200px;
+    width: 300px;
+    display: block;
+    margin: 5px;
 }

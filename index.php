@@ -15,7 +15,7 @@ $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
+    <div class="text">
         <?php echo $parsedown->text($readmeContent); ?>
         <br/>
     </div>
