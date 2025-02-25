@@ -11,8 +11,9 @@ $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Foodblog</title>
+        <title>Davids F🍅🍅dbl🍅g</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="zitrone.png" type="image/x-icon">
     </head>
     <body>
         <div class="text">
