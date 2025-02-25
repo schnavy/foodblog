@@ -6,6 +6,18 @@ $readmeContent = file_get_contents('README.md');
 
 $imageDirectory = 'food';
 $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+$latestFile = null;
+$latestTime = 0;
+
+foreach ($images as $image) {
+    if (filemtime($image) > $latestTime) {
+        $latestFile = $image;
+        $latestTime = filemtime($image);
+    }
+}
+
+$lastModifiedDateTime = date('Y-m-d H:i:s', $latestTime);
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +31,8 @@ $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
         <div class="text">
             <?php echo $parsedown->text($readmeContent); ?>
             <br/>
+            <i><?php echo "Latest f🍋🍋d added: $lastModifiedDateTime"; ?></i>
+            <br/>
         </div>
         <div class="images">
             <?php foreach ($images as $index => $img): ?>
@@ -29,8 +43,8 @@ $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
             <?php endforeach; ?>
         </div>
         <div class="text">
-            S🧅 far they are n🧅t in a particular 🧅rder, but numbered, in case you want me to c🧅🧅k it again.</br>
-            C🧅llected by this <a href="https://davidwahrenburg.de">🥔</a>.
+            S🍋 far they are n🍋t in a particular 🍋rder, but numbered, in case you want me to c🍋🍋k it again.</br>
+            C🍋llected by this <a href="https://davidwahrenburg.de">🥔</a>.
         </div>
     </body>
 </html>
