@@ -17,7 +17,7 @@ $latestTime = filemtime($latestFile);
 $lastModifiedDateTime = date('Y-m-d H:i:s', $latestTime);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>F🍋🍋d</title>
