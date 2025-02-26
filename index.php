@@ -7,15 +7,12 @@ $readmeContent = file_get_contents('README.md');
 $imageDirectory = 'food';
 $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
-$latestFile = null;
-$latestTime = 0;
+usort($images, function($a, $b) {
+    return filemtime($b) - filemtime($a);
+});
 
-foreach ($images as $image) {
-    if (filemtime($image) > $latestTime) {
-        $latestFile = $image;
-        $latestTime = filemtime($image);
-    }
-}
+$latestFile = $images[0]; // The first image after sorting is the latest
+$latestTime = filemtime($latestFile);
 
 $lastModifiedDateTime = date('Y-m-d H:i:s', $latestTime);
 ?>
@@ -23,7 +20,7 @@ $lastModifiedDateTime = date('Y-m-d H:i:s', $latestTime);
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Davids F🍅🍅dbl🍅g</title>
+        <title>F🍋🍋d</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="zitrone.png" type="image/x-icon">
     </head>
@@ -33,6 +30,8 @@ $lastModifiedDateTime = date('Y-m-d H:i:s', $latestTime);
             <br/>
             <i><?php echo "Latest f🍋🍋d added: $lastModifiedDateTime"; ?></i>
             <br/>
+            C🍋llected by this <a href="https://davidwahrenburg.de">🥔</a>.
+            <br/>
         </div>
         <div class="images">
             <?php foreach ($images as $index => $img): ?>
@@ -41,10 +40,6 @@ $lastModifiedDateTime = date('Y-m-d H:i:s', $latestTime);
                     <img src="<?php echo $img; ?>" alt="Food Image <?php echo $index + 1; ?>">
                 </div>
             <?php endforeach; ?>
-        </div>
-        <div class="text">
-            S🍋 far they are n🍋t in a particular 🍋rder, but numbered, in case you want me to c🍋🍋k it again.</br>
-            C🍋llected by this <a href="https://davidwahrenburg.de">🥔</a>.
         </div>
     </body>
 </html>
